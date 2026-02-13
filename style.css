@@ -1,0 +1,112 @@
+:root {
+    --primary-color: #ff4d6d;
+    --secondary-color: #ff8fa3;
+    --bg-color: #fff0f3;
+    --text-color: #590d22;
+    --btn-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Quicksand', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#heartTree {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.container {
+    text-align: center;
+    z-index: 10;
+    position: relative;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(255, 77, 109, 0.2);
+    backdrop-filter: blur(8px);
+    transition: opacity 0.5s ease;
+}
+
+.title {
+    font-family: 'Pacifico', cursive;
+    font-size: 4rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 100px; /* Space for moving button */
+}
+
+.btn {
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Pacifico', cursive;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: var(--btn-shadow);
+}
+
+.yes-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.yes-btn:hover {
+    transform: scale(1.1);
+    background-color: #ff2d55;
+}
+
+.no-btn {
+    background-color: #e5e5e5;
+    color: #666;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.visible {
+    display: block;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.success-message {
+    font-family: 'Pacifico', cursive;
+    color: var(--text-color);
+    font-size: 2.5rem;
+    line-height: 1.4;
+    max-width: 600px;
+}
